@@ -1,32 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Register</title>
+    <title>AgriConnect Register</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial;
+        }
+
+        body{
+            background:#d2b48c;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+        }
+
+        .container{
+            width:450px;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 0 15px rgba(0,0,0,0.2);
+        }
+
+        h2{
+            text-align:center;
+            color:brown;
+            margin-bottom:20px;
+        }
+
+        input,select{
+            width:100%;
+            padding:10px;
+            margin:8px 0;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            background:brown;
+            color:white;
+            border:none;
+            cursor:pointer;
+            border-radius:5px;
+        }
+
+        button:hover{
+            background:#8B4513;
+        }
+
+    </style>
+
 </head>
+
 <body>
 
-<h2>Register</h2>
+<div class="container">
 
-<form>
+    <h2>🌾 User Registration</h2>
 
-<input type="text" placeholder="First Name"><br><br>
+    <form>
 
-<input type="text" placeholder="Last Name"><br><br>
+        <input type="text" placeholder="First Name" required>
 
-<input type="email" placeholder="Email"><br><br>
+        <input type="text" placeholder="Middle Name">
 
-<input type="password" placeholder="Password"><br><br>
+        <input type="text" placeholder="Last Name" required>
 
-<select>
-<option>Land Owner</option>
-<option>Land Renter</option>
-</select>
+        <input type="text" placeholder="Address" required>
 
-<br><br>
+        <input type="text" placeholder="Contact Number" required>
 
-<button type="submit">Register</button>
+        <input type="email" placeholder="Email" required>
 
-</form>
+        <input type="password" placeholder="Password" required>
+
+        <select>
+            <option>Land Owner</option>
+            <option>Land Renter</option>
+        </select>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+</div>
 
 </body>
 </html>
