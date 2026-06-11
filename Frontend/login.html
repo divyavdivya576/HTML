@@ -1,21 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
+    <title>AgriConnect Login</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial;
+        }
+
+        body{
+            background:#f4f4f4;
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .container{
+            width:350px;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 0 15px rgba(0,0,0,0.2);
+        }
+
+        h2{
+            text-align:center;
+            color:brown;
+            margin-bottom:20px;
+        }
+
+        input{
+            width:100%;
+            padding:10px;
+            margin:10px 0;
+        }
+
+        button{
+            width:100%;
+            padding:10px;
+            background:brown;
+            color:white;
+            border:none;
+            cursor:pointer;
+        }
+
+        p{
+            text-align:center;
+            margin-top:15px;
+        }
+
+        a{
+            color:brown;
+            text-decoration:none;
+        }
+
+    </style>
+
 </head>
+
 <body>
 
-<h2>Login</h2>
+<div class="container">
 
-<form>
-    <input type="email" placeholder="Email"><br><br>
+    <h2>🌾 Login</h2>
 
-    <input type="password" placeholder="Password"><br><br>
+    <form>
 
-    <button type="submit">Login</button>
-</form>
+        <input type="email" placeholder="Enter Email">
 
-<a href="register.html">Register Here</a>
+        <input type="password" placeholder="Enter Password">
+
+        <button type="submit">Login</button>
+
+    </form>
+
+    <p>
+        New User?
+        <a href="register.html">Register Here</a>
+    </p>
+
+</div>
 
 </body>
 </html>
