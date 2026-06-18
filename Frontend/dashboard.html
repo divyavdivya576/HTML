@@ -1,49 +1,72 @@
 <!DOCTYPE html>
-
 <html>
+
 <head>
 <title>AgriConnect Dashboard</title>
+
 <style>
+
 body{
-font-family:Arial;
-background:#f4f4f4;
-margin:0;
-padding:0;
+    font-family: Arial, sans-serif;
+    background:#F5F7F2;
+    margin:0;
+    padding:0;
 }
 
 .header{
-background:green;
-color:white;
-padding:15px;
-text-align:center;
+    background:#2E7D32;
+    color:white;
+    text-align:center;
+    padding:20px;
 }
 
 .container{
-width:90%;
-margin:auto;
-padding:20px;
+    width:90%;
+    margin:auto;
+    padding:20px;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:20px;
 }
 
 .card{
-background:white;
-padding:20px;
-margin:15px 0;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0px 3px 12px rgba(0,0,0,0.15);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:15px;
 }
 
 .card h3{
-color:green;
+    color:#1B5E20;
 }
 
 .btn{
-background:green;
-color:white;
-padding:10px 20px;
-border:none;
-border-radius:5px;
-cursor:pointer;
-} </style>
+    width:100%;
+    padding:12px;
+    background:#388E3C;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.btn:hover{
+    background:#2E7D32;
+}
+
+</style>
 
 </head>
 
@@ -51,12 +74,19 @@ cursor:pointer;
 
 <div class="header">
 <h1>🌾 AgriConnect Dashboard</h1>
+<p>Find Agricultural Lands Available for Rent</p>
 </div>
 
 <div class="container">
 
 <div class="card">
-<h3>📍 Land 1</h3>
+
+<img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef">
+
+<div class="card-content">
+
+<h3>📍 Thanjavur Land</h3>
+
 <p><b>Owner:</b> Ramesh Kumar</p>
 <p><b>Location:</b> Thanjavur, Tamil Nadu</p>
 <p><b>Area:</b> 5 Acres</p>
@@ -65,11 +95,22 @@ cursor:pointer;
 <p><b>Water:</b> Borewell Available</p>
 <p><b>Suitable Crops:</b> Paddy, Sugarcane</p>
 <p><b>Contact:</b> 9876543210</p>
+
+<a href="rentland.html">
 <button class="btn">Rent Land</button>
+</a>
+
+</div>
 </div>
 
 <div class="card">
-<h3>📍 Land 2</h3>
+
+<img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399">
+
+<div class="card-content">
+
+<h3>📍 Erode Land</h3>
+
 <p><b>Owner:</b> Suresh</p>
 <p><b>Location:</b> Erode, Tamil Nadu</p>
 <p><b>Area:</b> 8 Acres</p>
@@ -78,11 +119,22 @@ cursor:pointer;
 <p><b>Water:</b> Canal Water</p>
 <p><b>Suitable Crops:</b> Cotton, Maize</p>
 <p><b>Contact:</b> 9876541230</p>
-<button class="btn">Rent Land</button>
+
+<a href="rentland.html">
+    <button class="btn">Rent Land</button>
+</a>
+
+</div>
 </div>
 
 <div class="card">
-<h3>📍 Land 3</h3>
+
+<img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854">
+
+<div class="card-content">
+
+<h3>📍 Salem Land</h3>
+
 <p><b>Owner:</b> Mahesh</p>
 <p><b>Location:</b> Salem, Tamil Nadu</p>
 <p><b>Area:</b> 3 Acres</p>
@@ -91,7 +143,12 @@ cursor:pointer;
 <p><b>Water:</b> Well Water</p>
 <p><b>Suitable Crops:</b> Groundnut, Vegetables</p>
 <p><b>Contact:</b> 9123456780</p>
+
+<a href="rentland.html">
 <button class="btn">Rent Land</button>
+</a>
+
+</div>
 </div>
 
 </div>

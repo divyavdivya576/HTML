@@ -11,29 +11,33 @@ app.use(express.json());
 // MongoDB Connection
 mongoose.connect("mongodb://127.0.0.1:27017/agriapp")
 .then(() => {
-console.log("MongoDB Connected ✅");
+    console.log("MongoDB Connected ✅");
 })
 .catch((err) => {
-console.log("MongoDB Error ❌", err);
+    console.log("MongoDB Error ❌", err);
 });
 
 // Import Routes
 const userRoutes = require("./routes/UserRoutes");
+const landRoutes = require("./routes/LandRoutes");
 
 // Use Routes
 app.use("/", userRoutes);
-const landRoutes = require("./routes/LandRoutes");
-
 app.use("/", landRoutes);
 
 // Test Route
 app.get("/", (req, res) => {
-res.send("AgriConnect Backend Running 🚀");
+    res.send("AgriConnect Backend Running 🚀");
+});
+
+// Test Lands Route
+app.get("/test", (req, res) => {
+    res.send("Server Working ✅");
 });
 
 // Start Server
 const PORT = 5000;
 
 app.listen(PORT, () => {
-console.log(`Server running on port ${PORT} 🚀`);
+    console.log(`Server running on port ${PORT} 🚀`);
 });
