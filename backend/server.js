@@ -22,6 +22,9 @@ const userRoutes = require("./routes/UserRoutes");
 
 // Use Routes
 app.use("/", userRoutes);
+const landRoutes = require("./routes/LandRoutes");
+
+app.use("/", landRoutes);
 
 // Test Route
 app.get("/", (req, res) => {

@@ -1,144 +1,98 @@
 <!DOCTYPE html>
+
 <html>
 <head>
-<title>Dashboard</title>
-
+<title>AgriConnect Dashboard</title>
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial;
-}
-
 body{
-    background:#f4f4f4;
+font-family:Arial;
+background:#f4f4f4;
+margin:0;
+padding:0;
 }
 
-.navbar{
-    background:brown;
-    color:white;
-    padding:15px;
-    text-align:center;
-    font-size:22px;
+.header{
+background:green;
+color:white;
+padding:15px;
+text-align:center;
 }
 
 .container{
-    width:90%;
-    margin:30px auto;
-}
-
-.section{
-    background:white;
-    padding:20px;
-    margin-bottom:20px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-
-.land-cards{
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
+width:90%;
+margin:auto;
+padding:20px;
 }
 
 .card{
-    width:280px;
-    background:white;
-    border-radius:10px;
-    padding:20px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
+background:white;
+padding:20px;
+margin:15px 0;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
 .card h3{
-    color:brown;
+color:green;
 }
 
-.book-btn{
-    margin-top:10px;
-    padding:10px;
-    width:100%;
-    background:green;
-    color:white;
-    border:none;
-    border-radius:5px;
-}
-
-.logout{
-    background:red;
-    color:white;
-    padding:10px 20px;
-    border:none;
-    border-radius:5px;
-}
-
-</style>
+.btn{
+background:green;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+} </style>
 
 </head>
 
 <body>
 
-<div class="navbar">
-    🌾 AgriConnect Dashboard
+<div class="header">
+<h1>🌾 AgriConnect Dashboard</h1>
 </div>
 
 <div class="container">
 
-<div class="section">
-<h2>User Details</h2>
-
-<p><b>Name:</b> Divya</p>
-<p><b>Email:</b> divya@gmail.com</p>
-<p><b>Role:</b> Land Renter</p>
-
-</div>
-
-<div class="section">
-
-<h2>Available Lands</h2>
-
-<div class="land-cards">
-
 <div class="card">
-<h3>Chennai Land</h3>
-<p>Area: 5 Acres</p>
-<p>Soil: Black Soil</p>
-<p>Rent: ₹20,000/month</p>
-<button class="book-btn">Book Now</button>
+<h3>📍 Land 1</h3>
+<p><b>Owner:</b> Ramesh Kumar</p>
+<p><b>Location:</b> Thanjavur, Tamil Nadu</p>
+<p><b>Area:</b> 5 Acres</p>
+<p><b>Rent:</b> ₹25,000 / Season</p>
+<p><b>Soil Type:</b> Red Soil</p>
+<p><b>Water:</b> Borewell Available</p>
+<p><b>Suitable Crops:</b> Paddy, Sugarcane</p>
+<p><b>Contact:</b> 9876543210</p>
+<button class="btn">Rent Land</button>
 </div>
 
 <div class="card">
-<h3>Coimbatore Land</h3>
-<p>Area: 10 Acres</p>
-<p>Soil: Red Soil</p>
-<p>Rent: ₹35,000/month</p>
-<button class="book-btn">Book Now</button>
+<h3>📍 Land 2</h3>
+<p><b>Owner:</b> Suresh</p>
+<p><b>Location:</b> Erode, Tamil Nadu</p>
+<p><b>Area:</b> 8 Acres</p>
+<p><b>Rent:</b> ₹40,000 / Season</p>
+<p><b>Soil Type:</b> Black Soil</p>
+<p><b>Water:</b> Canal Water</p>
+<p><b>Suitable Crops:</b> Cotton, Maize</p>
+<p><b>Contact:</b> 9876541230</p>
+<button class="btn">Rent Land</button>
 </div>
 
 <div class="card">
-<h3>Madurai Land</h3>
-<p>Area: 3 Acres</p>
-<p>Soil: Brown Soil</p>
-<p>Rent: ₹15,000/month</p>
-<button class="book-btn">Book Now</button>
+<h3>📍 Land 3</h3>
+<p><b>Owner:</b> Mahesh</p>
+<p><b>Location:</b> Salem, Tamil Nadu</p>
+<p><b>Area:</b> 3 Acres</p>
+<p><b>Rent:</b> ₹15,000 / Season</p>
+<p><b>Soil Type:</b> Sandy Soil</p>
+<p><b>Water:</b> Well Water</p>
+<p><b>Suitable Crops:</b> Groundnut, Vegetables</p>
+<p><b>Contact:</b> 9123456780</p>
+<button class="btn">Rent Land</button>
 </div>
-
-</div>
-
-</div>
-
-<div class="section">
-
-<h2>Weather Information</h2>
-
-<p>🌤 Temperature: 31°C</p>
-<p>💧 Humidity: 62%</p>
-<p>🌬 Wind Speed: 12 km/h</p>
-
-</div>
-
-<button class="logout">Logout</button>
 
 </div>
 
