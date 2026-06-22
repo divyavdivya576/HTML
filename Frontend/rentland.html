@@ -1,41 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>Rent Land</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgriConnect - Rent Land</title>
 
 <style>
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
 body{
-    font-family:Arial;
     background:#F5F7F2;
+}
+
+.nav{
+    background:#1B5E20;
+    padding:15px;
+    text-align:center;
+}
+
+.nav a{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+    font-weight:bold;
+}
+
+.nav a:hover{
+    color:#C8E6C9;
+}
+
+.header{
+    background:#2E7D32;
+    color:white;
+    text-align:center;
+    padding:20px;
 }
 
 .container{
     width:500px;
-    margin:50px auto;
+    margin:40px auto;
     background:white;
     padding:25px;
-    border-radius:10px;
-    box-shadow:0px 0px 10px gray;
+    border-radius:12px;
+    box-shadow:0px 0px 15px rgba(0,0,0,0.2);
 }
 
 h2{
-    color:#2E7D32;
     text-align:center;
+    color:#1B5E20;
+    margin-bottom:20px;
 }
 
-input,select{
+input,
+select,
+textarea{
     width:100%;
-    padding:10px;
-    margin:10px 0;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:15px;
+}
+
+textarea{
+    resize:none;
 }
 
 button{
     width:100%;
     padding:12px;
-    background:#2E7D32;
+    background:#388E3C;
     color:white;
     border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#2E7D32;
+}
+
+.success{
+    margin-top:15px;
+    color:green;
+    text-align:center;
+    font-weight:bold;
 }
 
 </style>
@@ -44,27 +101,127 @@ button{
 
 <body>
 
+<div class="nav">
+
+<a href="index.html">Home</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="addland.html">Add Land</a>
+<a href="portfolio.html">Portfolio</a>
+
+</div>
+
+<div class="header">
+
+<h1>🌾 AgriConnect</h1>
+<p>Rent Agricultural Land Easily</p>
+
+</div>
+
 <div class="container">
 
-<h2>🌾 Rent Agricultural Land</h2>
+<h2>Rent Agricultural Land</h2>
 
-<form>
+<form id="rentForm">
 
-<input type="text" placeholder="Farmer Name">
+<input
+type="text"
+id="farmerName"
+placeholder="Farmer Name"
+required>
 
-<input type="text" placeholder="Contact Number">
+<input
+type="text"
+id="phone"
+placeholder="Contact Number"
+required>
 
-<select>
-<option>3 Months</option>
-<option>6 Months</option>
-<option>12 Months</option>
+<input
+type="email"
+id="email"
+placeholder="Email Address"
+required>
+
+<select id="duration" required>
+
+<option value="">Select Rental Duration</option>
+
+<option value="3 Months">
+3 Months
+</option>
+
+<option value="6 Months">
+6 Months
+</option>
+
+<option value="12 Months">
+12 Months
+</option>
+
 </select>
 
-<button type="submit">Submit Request</button>
+<input
+type="text"
+id="crop"
+placeholder="Crop Planning (Paddy, Sugarcane, etc.)">
+
+<textarea
+id="message"
+rows="4"
+placeholder="Additional Requirements">
+</textarea>
+
+<button type="submit">
+
+Submit Rental Request
+
+</button>
 
 </form>
 
+<p id="successMsg" class="success"></p>
+
 </div>
+
+<script>
+
+document.getElementById("rentForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const rentalData = {
+
+        farmerName:
+        document.getElementById("farmerName").value,
+
+        phone:
+        document.getElementById("phone").value,
+
+        email:
+        document.getElementById("email").value,
+
+        duration:
+        document.getElementById("duration").value,
+
+        crop:
+        document.getElementById("crop").value,
+
+        message:
+        document.getElementById("message").value
+
+    };
+
+    console.log(rentalData);
+
+    document.getElementById("successMsg")
+    .innerHTML =
+    "✅ Rental Request Submitted Successfully!";
+
+    document.getElementById("rentForm").reset();
+
+});
+
+</script>
 
 </body>
 </html>

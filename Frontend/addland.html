@@ -38,10 +38,10 @@
     input{
         width:100%;
         padding:12px;
-        margin-top:10px;
-        margin-bottom:10px;
+        margin:10px 0;
         border:1px solid #ccc;
         border-radius:5px;
+        box-sizing:border-box;
     }
 
     button{
@@ -104,10 +104,7 @@ document.getElementById("landForm").addEventListener("submit", async function(e)
 
     e.preventDefault();
 
-    console.log("Form Submitted");
-
     const landData = {
-
         owner: document.getElementById("owner").value,
         location: document.getElementById("location").value,
         acres: document.getElementById("acres").value,
@@ -115,31 +112,29 @@ document.getElementById("landForm").addEventListener("submit", async function(e)
         soilType: document.getElementById("soilType").value,
         waterAvailability: document.getElementById("waterAvailability").value,
         contact: document.getElementById("contact").value
-
     };
 
-    try {
+    try{
 
         const response = await fetch("http://localhost:5000/addland", {
-
-            method:"POST",
-
-            headers:{
-                "Content-Type":"application/json"
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
             },
-
             body: JSON.stringify(landData)
-
         });
 
         const result = await response.json();
 
         alert(result.message);
 
-    }
-    catch(error){
+        if(result.success){
+            window.location.href = "dashboard.html";
+        }
 
-        console.log(error);
+    }catch(error){
+
+        console.error(error);
 
         alert("Backend Connection Error");
 

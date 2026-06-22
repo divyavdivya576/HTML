@@ -64,21 +64,21 @@
 
     <h2>🌾 User Registration</h2>
 
-    <form>
+    <form id="registerForm">
 
-        <input type="text" placeholder="First Name" required>
+        <input type="text" id="fname" placeholder="First Name" required>
 
-        <input type="text" placeholder="Middle Name">
+        <input type="text" id="fname" placeholder="Middle Name">
 
-        <input type="text" placeholder="Last Name" required>
+        <input type="text" id="fname" placeholder="Last Name" required>
 
-        <input type="text" placeholder="Address" required>
+        <input type="text" id="fname" placeholder="Address" required>
 
-        <input type="text" placeholder="Contact Number" required>
+        <input type="text" id="fname" placeholder="Contact Number" required>
 
-        <input type="email" placeholder="Email" required>
+        <input type="email" id="fname" placeholder="Email" required>
 
-        <input type="password" placeholder="Password" required>
+        <input type="password" id="fname" placeholder="Password" required>
 
         <select>
             <option>Land Owner</option>
@@ -89,7 +89,19 @@
 
     </form>
 
-</div>
+</div><script>
 
+document.querySelector("form").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    alert("Registration Successful ✅");
+
+    window.location.href = "login.html";
+
+});
+
+
+</script>
 </body>
 </html>

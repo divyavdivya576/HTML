@@ -79,5 +79,27 @@ router.post("/login", async (req, res) => {
     }
 
 });
+router.get("/users", async (req, res) => {
 
-module.exports = router;
+
+try {
+
+    const users = await User.find();
+
+    res.json(users);
+
+} catch (error) {
+
+    console.log(error);
+
+    res.status(500).json({
+        message: "Error Fetching Users"
+    });
+
+}
+
+
+});
+
+
+module.exports = router; 
