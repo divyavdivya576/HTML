@@ -20,10 +20,12 @@ mongoose.connect("mongodb://127.0.0.1:27017/agriapp")
 // Import Routes
 const userRoutes = require("./routes/UserRoutes");
 const landRoutes = require("./routes/LandRoutes");
+const rentalRoutes = require("./routes/RentalRoutes");
 
 // Use Routes
 app.use("/", userRoutes);
 app.use("/", landRoutes);
+app.use("/", rentalRoutes);
 
 // Test Route
 app.get("/", (req, res) => {
