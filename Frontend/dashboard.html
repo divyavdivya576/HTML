@@ -80,7 +80,7 @@ font-weight:bold;
 }
 .hero img{
     width:100%;
-    height:350px;
+    height:180px;
     object-fit:cover;
 }
 </style>
@@ -119,18 +119,13 @@ fetch("http://localhost:5000/lands")
 
     console.log("DATA=", data);
 
-    container.innerHTML = "";
+    container.innerHTML = ""; 
 
-    data.forEach((land, index) => {
-
-
-const image = images[index % images.length];
+    data.forEach((land) => {
 
 container.innerHTML += `
 
 <div class="card">
-
-    <img src="${image}">
 
     <div class="card-content">
 

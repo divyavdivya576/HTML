@@ -3,11 +3,11 @@ const router = express.Router();
 
 const Rental = require("../models/Rental");
 
+// Save Rental Request
 router.post("/rent", async (req, res) => {
-
-```
 try {
 
+```
     const rental = new Rental(req.body);
 
     await rental.save();
@@ -17,11 +17,11 @@ try {
         message: "Rental Request Saved Successfully"
     });
 
-} catch(error){
+} catch (error) {
 
     console.log(error);
 
-    res.json({
+    res.status(500).json({
         success: false,
         message: "Rental Request Failed"
     });
@@ -31,12 +31,25 @@ try {
 
 });
 
+// Get All Rental Requests
 router.get("/rentals", async (req, res) => {
+try {
 
 ```
-const rentals = await Rental.find();
+    const rentals = await Rental.find();
 
-res.json(rentals);
+    res.json(rentals);
+
+} catch (error) {
+
+    console.log(error);
+
+    res.status(500).json({
+        success: false,
+        message: "Error Fetching Rentals"
+    });
+
+}
 ```
 
 });
