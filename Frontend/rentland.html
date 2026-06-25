@@ -184,44 +184,66 @@ Submit Rental Request
 
 <script>
 
-document.getElementById("rentForm")
-.addEventListener("submit", function(e){
+document.getElementById("rentForm").addEventListener("submit", async function(e){
 
     e.preventDefault();
 
     const rentalData = {
 
-        farmerName:
-        document.getElementById("farmerName").value,
+        farmerName: document.getElementById("farmerName").value,
 
-        phone:
-        document.getElementById("phone").value,
+        phone: document.getElementById("phone").value,
 
-        email:
-        document.getElementById("email").value,
+        email: document.getElementById("email").value,
 
-        duration:
-        document.getElementById("duration").value,
+        duration: document.getElementById("duration").value,
 
-        crop:
-        document.getElementById("crop").value,
+        crop: document.getElementById("crop").value,
 
-        message:
-        document.getElementById("message").value
+        message: document.getElementById("message").value
 
     };
 
-    console.log(rentalData);
+    try{
 
-    document.getElementById("successMsg")
-    .innerHTML =
-    "✅ Rental Request Submitted Successfully!";
+        const response = await fetch("http://localhost:5000/rent",{
 
-    document.getElementById("rentForm").reset();
+            method:"POST",
+
+            headers:{
+                "Content-Type":"application/json"
+            },
+
+            body:JSON.stringify(rentalData)
+
+        });
+
+        const result = await response.json();
+
+        alert(result.message);
+
+        if(result.success){
+
+            document.getElementById("successMsg").innerHTML =
+            "✅ Rental Request Submitted Successfully!";
+
+            document.getElementById("rentForm").reset();
+
+        }
+
+    }
+    catch(error){
+
+        console.log(error);
+
+        alert("Backend Connection Error");
+
+    }
 
 });
 
 </script>
+
 
 </body>
 </html>
