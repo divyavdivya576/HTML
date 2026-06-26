@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Owner Dashboard</title>
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    background:#F5F7F2;
+    margin:0;
+}
+
+.nav{
+    background:#1B5E20;
+    padding:15px;
+    text-align:center;
+}
+
+.nav a{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+    font-weight:bold;
+}
+
+.header{
+    background:#2E7D32;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.cards{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+
+padding:30px;
+
+}
+
+.card{
+
+background:white;
+
+padding:25px;
+
+border-radius:10px;
+
+box-shadow:0 0 10px rgba(0,0,0,.2);
+
+text-align:center;
+
+}
+
+.card h2{
+
+color:#2E7D32;
+
+font-size:40px;
+
+margin:10px 0;
+
+}
+
+.card p{
+
+font-size:18px;
+
+font-weight:bold;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="nav">
+
+<a href="index.html">Home</a>
+
+<a href="dashboard.html">Dashboard</a>
+
+<a href="requests.html">Requests</a>
+
+<a href="owner-dashboard.html">Owner Dashboard</a>
+
+</div>
+
+<div class="header">
+
+<h1>🌾 Owner Dashboard</h1>
+
+<p>AgriConnect Statistics</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<p>Total Requests</p>
+
+<h2 id="total">0</h2>
+
+</div>
+
+<div class="card">
+
+<p>Accepted</p>
+
+<h2 id="accepted">0</h2>
+
+</div>
+
+<div class="card">
+
+<p>Pending</p>
+
+<h2 id="pending">0</h2>
+
+</div>
+
+<div class="card">
+
+<p>Rejected</p>
+
+<h2 id="rejected">0</h2>
+
+</div>
+
+</div>
+
+<script>
+
+fetch("http://localhost:5000/rentals")
+
+.then(res=>res.json())
+
+.then(data=>{
+
+document.getElementById("total").innerHTML=data.length;
+
+let accepted=0;
+
+let pending=0;
+
+let rejected=0;
+
+data.forEach(rental=>{
+
+if(rental.status==="Accepted"){
+
+accepted++;
+
+}
+
+else if(rental.status==="Rejected"){
+
+rejected++;
+
+}
+
+else{
+
+pending++;
+
+}
+
+});
+
+document.getElementById("accepted").innerHTML=accepted;
+
+document.getElementById("pending").innerHTML=pending;
+
+document.getElementById("rejected").innerHTML=rejected;
+
+})
+
+.catch(error=>{
+
+console.log(error);
+
+});
+
+</script>
+
+</body>
+
+</html>

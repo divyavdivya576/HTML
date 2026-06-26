@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Rental Requests</title>
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    background:#F5F7F2;
+    margin:0;
+}
+
+.nav{
+    background:#1B5E20;
+    padding:15px;
+    text-align:center;
+}
+
+.nav a{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+    font-weight:bold;
+}
+
+.header{
+    background:#2E7D32;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    width:90%;
+    margin:auto;
+    margin-top:30px;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    padding:20px;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+
+.card h2{
+    color:#1B5E20;
+}
+
+.status{
+    font-weight:bold;
+    font-size:18px;
+}
+
+.accepted{
+    color:green;
+}
+
+.rejected{
+    color:red;
+}
+
+.pending{
+    color:orange;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="nav">
+
+<a href="index.html">Home</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="requests.html">Requests</a>
+<a href="myrequests.html">My Requests</a>
+
+</div>
+
+<div class="header">
+
+<h1>🌾 My Rental Requests</h1>
+
+<p>Track all your rental requests</p>
+
+</div>
+
+<div class="container" id="requestContainer">
+
+</div>
+
+<script>
+
+const container = document.getElementById("requestContainer");
+
+fetch("http://localhost:5000/rentals")
+
+.then(response => response.json())
+
+.then(data=>{
+
+container.innerHTML="";
+
+data.forEach(rental=>{
+
+let statusClass="pending";
+
+if(rental.status==="Accepted"){
+
+statusClass="accepted";
+
+}
+
+else if(rental.status==="Rejected"){
+
+statusClass="rejected";
+
+}
+
+container.innerHTML += `
+
+<div class="card">
+
+<h2>${rental.farmerName}</h2>
+
+<p><b>📞 Phone :</b> ${rental.phone}</p>
+
+<p><b>📧 Email :</b> ${rental.email}</p>
+
+<p><b>🌱 Crop :</b> ${rental.crop}</p>
+
+<p><b>📅 Duration :</b> ${rental.duration}</p>
+
+<p class="status ${statusClass}">
+
+Status : ${rental.status}
+
+</p>
+
+</div>
+
+`;
+
+});
+
+})
+
+.catch(error=>{
+
+console.log(error);
+
+alert("Unable to Load Requests");
+
+});
+
+</script>
+
+</body>
+
+</html>

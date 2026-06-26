@@ -100,10 +100,27 @@ font-weight:bold;
 <div class="hero">
     <img src="https://images.unsplash.com/photo-1518843875459-f738682238a6?auto=format&fit=crop&w=1400&q=80">
 </div>
+<div style="text-align:center;margin:30px;">
+
+<input
+type="text"
+id="searchBox"
+placeholder="🔍 Search by Location..."
+onkeyup="searchLand()"
+style="
+width:350px;
+padding:12px;
+font-size:16px;
+border-radius:8px;
+border:1px solid #ccc;
+">
+
+</div>
 
 <div class="container" id="landContainer">
 
 </div>
+let allLands = [];
 <script>
 
 const container = document.getElementById("landContainer");
